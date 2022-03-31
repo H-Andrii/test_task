@@ -17,8 +17,8 @@ jobs:
       - uses: azure/docker-login@v1
         with:
           login-server: andriih.azurecr.io
-          username: ${{ secrets.ACR_USERNAME }}
-          password: ${{ secrets.ACR_PASSWORD }}
+          creds: '${{ secrets.AZURE_CREDENTIALS }}'
+          enable-AzPSSession: true
 
       - run: |
           docker build . -t andriih.azurecr.io/appdb:${{ github.sha }}
