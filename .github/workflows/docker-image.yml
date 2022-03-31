@@ -16,10 +16,10 @@ jobs:
       
       - uses: azure/docker-login@v1
         with:
-          login-server: yourACRname.azurecr.io
+          login-server: andriih.azurecr.io
           username: ${{ secrets.ACR_USERNAME }}
           password: ${{ secrets.ACR_PASSWORD }}
 
       - run: |
-          docker build . -t yourACRname.azurecr.io/appdb:${{ github.sha }}
-          docker push yourACRname.azurecr.io/appdb:${{ github.sha }}
+          docker build . -t andriih.azurecr.io/appdb:${{ github.sha }}
+          docker push andriih.azurecr.io/appdb:${{ github.sha }}
