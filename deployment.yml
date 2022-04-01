@@ -15,6 +15,7 @@ spec:
         app: nginx
     spec:
       containers:
-      - name: nginx
-        ports:
-      - containerPort: 80
+       - name: nginx
+      image: ${{ env.REGISTRY_NAME }}.azurecr.io/myimage:${{ github.sha }}
+      ports:
+       - containerPort: 80
