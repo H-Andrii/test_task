@@ -1,0 +1,11 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: ngnix-image
+spec:
+  containers:
+      ports:
+      - name: nginx
+        containerPort: 8080
+        protocol: TCP
